@@ -30,7 +30,7 @@ const Dashboard = () => {
   // Eliminar usuario
   const handleDelete = (id) => {
     if (window.confirm("¿Estás seguro de que quieres eliminar este usuario?")) {
-      axios.delete(`http://localhost:5000/users/${id}`)
+      axios.delete(`https://server-41642489028.us-central1.run.app/users/${id}`)
         .then(response => {
           setSuccess("Usuario eliminado con éxito");
           loadUsers(); // Recargar la lista de usuarios
@@ -56,7 +56,7 @@ const Dashboard = () => {
     const updateData = { email };
     if (password) updateData.password = password;
     
-    axios.put(`http://localhost:5000/users/${editUser.id}`, updateData)
+    axios.put(`https://server-41642489028.us-central1.run.app/users/${editUser.id}`, updateData)
       .then(response => {
         setSuccess("Usuario actualizado con éxito");
         setEditUser(null);
