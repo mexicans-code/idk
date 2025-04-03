@@ -1,0 +1,22 @@
+FROM node:18-alpine
+
+WORKDIR /app
+COPY package*.json ./
+
+# Copia todo primero
+COPY . .
+
+# Instala dependencias
+RUN npm install
+
+# Variables de entorno
+ENV NODE_ENV=production
+ENV PORT=5000
+
+EXPOSE 5000
+
+# Verificar que el archivo index.js existe
+RUN ls -la
+
+# Ejecutar con más información de depuración
+CMD ["node", "--trace-warnings", "index.js"]

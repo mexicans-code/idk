@@ -13,8 +13,8 @@ const Dashboard = () => {
 
   // Cargar usuarios
   const loadUsers = () => {
-    axios.get("http://localhost:5000/users")
-      .then(response => {
+    axios.get("https://server-41642489028.us-central1.run.app/users")
+    .then(response => {
         setUsers(response.data);
       })
       .catch(error => {

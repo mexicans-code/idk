@@ -12,7 +12,7 @@ const Login = () => {
     e.preventDefault();
     setError("");
     try {
-      const response = await axios.post("http://localhost:5000/login", {
+      const response = await axios.post("https://server-41642489028.us-central1.run.app/login", {
         email,
         password,
       });

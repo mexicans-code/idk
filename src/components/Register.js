@@ -11,14 +11,14 @@ const Register = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5000/register", {
+      const response = await axios.post("https://server-41642489028.us-central1.run.app/register", {
         email,
         password,
       });
       setMessage(response.data.message);
       setEmail("");
       setPassword("");
-      navigate("/dashboard");
+      navigate("/login");
     } catch (error) {
       setMessage("Error en el registro");
     }
@@ -32,7 +32,7 @@ const Register = () => {
           width: "100%",
           maxWidth: "400px",
           backgroundColor: "#ffffff",
-          borderRadius: "15px", // Bordes redondeados
+          borderRadius: "15px",
         }}
       >
         <h2
